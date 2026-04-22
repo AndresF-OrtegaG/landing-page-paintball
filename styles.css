@@ -1,0 +1,585 @@
+/* ==========================================================================
+   Importación de Fuentes (Google Fonts)
+   Títulos: Teko | Cuerpo: Montserrat
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;1,400&family=Teko:wght@400;500;600;700&display=swap');
+
+/* ==========================================================================
+   1. Variables :root
+   ========================================================================== */
+:root {
+    /* Paleta de Colores */
+    --bg-color: #0D0D0D;
+    --primary-color: #FF5722;
+    --secondary-color: #2B2B2B;
+    --accent-cta: #F2C94C;
+    --text-color: #F2F2F2;
+    
+    /* Tipografía */
+    --font-title: 'Teko', sans-serif;
+    --font-body: 'Montserrat', sans-serif;
+
+    /* Utilidades */
+    --transition-base: all 0.3s ease;
+    --border-radius: 6px;
+    --max-width: 1200px;
+}
+
+/* ==========================================================================
+   2. Configuración Global (Reset)
+   ========================================================================== */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6, legend {
+    font-family: var(--font-title);
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: 1px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition-base);
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--secondary-color), transparent);
+    margin: 2rem 0;
+}
+
+/* ==========================================================================
+   3. Header y Navegación
+   ========================================================================== */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    /* Efecto Glassmorphism / Desenfoque */
+    background-color: rgba(13, 13, 13, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+header .logo img {
+    border-radius: 4px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+nav ul li a {
+    font-family: var(--font-title);
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color: var(--text-color);
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* ==========================================================================
+   4. Sección Hero
+   ========================================================================== */
+#hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 80vh;
+    padding: 6rem 5%;
+    background: radial-gradient(circle at center, #1a1a1a 0%, var(--bg-color) 80%);
+}
+
+#hero-title {
+    font-size: clamp(3.5rem, 8vw, 6rem);
+    color: var(--primary-color);
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    text-shadow: 0 4px 20px rgba(255, 87, 34, 0.3);
+}
+
+#hero p {
+    background-color: var(--secondary-color);
+    font-style: italic;
+    padding: 2.5rem 3rem;
+    border-radius: var(--border-radius);
+    max-width: 800px;
+    font-size: 1.1rem;
+    border-left: 5px solid var(--primary-color);
+    margin-bottom: 3rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+#hero button {
+    background-color: var(--accent-cta);
+    color: var(--bg-color);
+    font-family: var(--font-title);
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 1rem 3rem;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition-base);
+    box-shadow: 0 4px 15px rgba(242, 201, 76, 0.4);
+}
+
+#hero button:hover {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    box-shadow: 0 6px 20px rgba(255, 87, 34, 0.6);
+}
+
+#hero button:active {
+    transform: scale(0.95);
+    filter: hue-rotate(-20deg);
+}
+
+/* ==========================================================================
+   5. Sección Beneficios
+   ========================================================================== */
+#beneficios {
+    padding: 5rem 5%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+#beneficios-title, #precios-title, #contacto-title {
+    font-size: 3rem;
+    text-align: center;
+    color: var(--text-color);
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+}
+
+.beneficios-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.beneficios-container article {
+    background-color: var(--secondary-color);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: var(--transition-base);
+}
+
+.beneficios-container article:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary-color);
+}
+
+.beneficios-container article img {
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    border: 3px solid var(--primary-color);
+}
+
+.beneficios-container article h3 {
+    font-size: 2rem;
+    color: var(--accent-cta);
+    margin-bottom: 1rem;
+}
+
+/* ==========================================================================
+   6. Sección Planes y Precios
+   ========================================================================== */
+#precios {
+    padding: 5rem 5%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--bg-color);
+    border: 2px solid var(--secondary-color);
+}
+
+caption {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #999;
+    font-style: italic;
+}
+
+th, td {
+    padding: 1.5rem;
+    border: 1px solid var(--secondary-color);
+    text-align: left;
+}
+
+th {
+    font-family: var(--font-title);
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    text-transform: uppercase;
+}
+
+/* Estilo táctico para las celdas de cabecera de filas */
+tbody th[scope="row"] {
+    color: var(--text-color);
+    background-color: #1a1a1a;
+}
+
+/* Zebra Striping */
+tbody tr:nth-child(even) {
+    background-color: rgba(43, 43, 43, 0.3);
+}
+
+tbody tr:hover {
+    background-color: rgba(255, 87, 34, 0.05);
+}
+
+/* Destacar Plan Delta Force */
+th:nth-child(3), td:nth-child(3) {
+    background-color: rgba(242, 201, 76, 0.08);
+    border: 2px solid var(--accent-cta);
+    position: relative;
+}
+
+thead th:nth-child(3) {
+    background-color: var(--accent-cta);
+    color: var(--bg-color);
+    text-align: center;
+}
+
+/* ==========================================================================
+   7. Sección Formulario de Registro
+   ========================================================================== */
+#formulario {
+    padding: 5rem 5%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#formulariop {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+form {
+    width: 100%;
+}
+
+fieldset {
+    border: none;
+    background-color: var(--secondary-color);
+    border-left: 8px solid var(--primary-color);
+    padding: 3rem 2rem;
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+}
+
+legend {
+    font-size: 2.5rem;
+    color: var(--accent-cta);
+    padding: 0 1rem;
+    margin-left: -2rem;
+}
+
+form div {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #CCC;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="number"] {
+    width: 100%;
+    padding: 1.2rem;
+    background-color: var(--bg-color);
+    border: 2px solid transparent;
+    border-radius: 4px;
+    color: var(--text-color);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    transition: var(--transition-base);
+}
+
+input::placeholder {
+    color: #666;
+}
+
+/* Efecto focus naranja/amarillo */
+input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 12px rgba(255, 87, 34, 0.5);
+    background-color: #111;
+}
+
+/* Estilización especial para radio buttons (Si se agregaran al HTML) */
+input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    display: none;
+}
+
+input[type="radio"] + label {
+    display: inline-block;
+    background-color: var(--bg-color);
+    border: 2px solid var(--bg-color);
+    padding: 1rem 2rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition-base);
+    text-align: center;
+    font-weight: 600;
+    margin-right: 1rem;
+    color: var(--text-color);
+}
+
+input[type="radio"]:checked + label {
+    background-color: rgba(242, 201, 76, 0.1);
+    border-color: var(--accent-cta);
+    color: var(--accent-cta);
+    box-shadow: 0 0 15px rgba(242, 201, 76, 0.4);
+}
+
+button[type="submit"] {
+    width: 100%;
+    background-color: var(--accent-cta);
+    color: var(--bg-color);
+    font-family: var(--font-title);
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 1.2rem;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: var(--transition-base);
+}
+
+button[type="submit"]:hover {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 87, 34, 0.5);
+}
+
+/* ==========================================================================
+   8. Footer
+   ========================================================================== */
+footer {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--secondary-color);
+    padding: 4rem 5% 2rem;
+    border-top: 3px solid var(--primary-color);
+}
+
+/* Posicionamiento del texto "Derechos Reservados" en la parte superior */
+footer > p {
+    order: -1;
+    text-align: center;
+    font-family: var(--font-title);
+    font-size: 1.5rem;
+    color: var(--accent-cta);
+    margin-bottom: 3rem;
+    letter-spacing: 2px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    width: 100%;
+}
+
+.footer-content section h3 {
+    font-size: 2rem;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+}
+
+.footer-content address {
+    font-style: normal;
+    line-height: 2;
+}
+
+.footer-content address a {
+    color: var(--accent-cta);
+}
+
+.footer-content address a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.footer-content ul {
+    list-style: none;
+    line-height: 2;
+}
+
+.footer-content ul li a:hover {
+    color: var(--primary-color);
+    padding-left: 5px;
+}
+
+/* ==========================================================================
+   9. Media Queries (Responsividad)
+   ========================================================================== */
+
+/* Tablet y Desktop */
+@media (min-width: 768px) {
+    /* Layout a 3 columnas para Beneficios */
+    .beneficios-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    /* Layout a 3 columnas para Footer (como solicitado, distribuye las 2 secciones y el espacio) */
+    .footer-content {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    /* Centrar contenido del footer que no ocupa las 3 columnas completas */
+    .footer-content section:nth-child(1) {
+        grid-column: 1 / 2;
+    }
+    .footer-content section:nth-child(2) {
+        grid-column: 3 / 4;
+        text-align: right;
+    }
+}
+
+/* Dispositivos Móviles Pequeños */
+@media (max-width: 480px) {
+    header {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+    
+    nav ul {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    #hero p {
+        padding: 1.5rem;
+        font-size: 1rem;
+    }
+    
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+    
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    
+    tr { margin-bottom: 2rem; border-bottom: 2px solid var(--primary-color); }
+    
+    td {
+        border: none;
+        position: relative;
+        padding-left: 50%;
+        text-align: right;
+    }
+    
+    td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 1rem;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        font-weight: bold;
+        text-align: left;
+        color: var(--accent-cta);
+    }
+    
+    fieldset {
+        padding: 2rem 1rem;
+    }
+    
+    .footer-content section:nth-child(2) {
+        text-align: left;
+    }
+}
+
+/* ==========================================================================
+   10. Animaciones de Revelado (Intersection Observer)
+   ========================================================================== */
+
+/* Estado inicial: oculto y desplazado hacia abajo */
+.reveal-init {
+    opacity: 0; 
+    transform: translateY(30px); 
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    will-change: opacity, transform; /* Optimización de rendimiento para el navegador */
+}
+
+/* Estado activo: cuando el JS añade la clase .visible al entrar en el viewport */
+.reveal-init.visible {
+    opacity: 1; 
+    transform: translateY(0);
+}
+
+/* Accesibilidad: Respeta si el usuario ha desactivado las animaciones en su sistema */
+@media (prefers-reduced-motion: reduce) {
+    .reveal-init {
+        transition: none;
+        opacity: 1;
+        transform: none;
+    }
+}
